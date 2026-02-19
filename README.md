@@ -7,6 +7,14 @@
   </a>
 </p>
 
+-在校大学生
+
+-自由设计师
+
+-学习GODOT、Python、html、音乐制作
+
+-热爱游戏、喜欢捣鼓
+
 <!--
 **CoralHymn/coralhymn** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
