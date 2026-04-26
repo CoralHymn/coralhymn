@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coralhymn | 琴海奶油 - 独立游戏开发者</title>
+    <meta name="description" content="琴海奶油的个人网站 - 独立游戏开发者、B站UP主、公共艺术设计师的作品集和博客">
+    <!-- 社交分享预览 (Open Graph) -->
+    <meta property="og:title" content="Coralhymn | 琴海奶油">
+    <meta property="og:description" content="独立游戏开发者、B站UP主、公共艺术设计师">
+    <meta property="og:url" content="https://www.coralhymn.com">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ========== 开屏加载动画 ========== -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <svg class="loading-svg" width="515" height="97.5" viewBox="0 0 206 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M199.474 23.79H192.694L187.204 15.81C187.105 15.67 187.024 15.46 186.964 15.18C186.904 14.8999 186.865 14.53 186.844 14.07H186.694V23.79H179.494V1.28998H186.274L191.764 9.26999C191.864 9.40998 191.944 9.61998 192.004 9.89999C192.064 10.18 192.104 10.55 192.124 11.01H192.274V1.28998H199.474V23.79Z" stroke="white" stroke-width="1.5" class="svg-elem-1 draw"></path>
+                <path d="M157.364 12.87L156.944 23.79H149.414L150.794 1.28998H160.184L162.974 12.75H163.244L166.034 1.28998H175.454L176.804 23.79H169.274L168.854 12.87H168.614L165.854 23.79H160.364L157.574 12.87H157.364Z" stroke="white" stroke-width="1.5" class="svg-elem-2 draw"></path>
+                <path d="M128.358 1.28998H136.308L138.288 9.20999H138.558L140.569 1.28998H148.519L142.039 17.67V23.79H134.838V17.67L128.358 1.28998Z" stroke="white" stroke-width="1.5" class="svg-elem-3 draw"></path>
+                <path d="M126.55 23.79H119.35V15.84H113.95V23.79H106.75V1.28998H113.95V9.23999H119.35V1.28998H126.55V23.79Z" stroke="#B52424" stroke-width="1.5" class="svg-elem-4 draw"></path>
+                <path d="M100.986 18.03V23.79H86.5858V1.28998H93.7858V18.03H100.986Z" stroke="white" stroke-width="1.5" class="svg-elem-5 draw"></path>
+                <path d="M70.8225 20.22L70.0125 23.79H62.4225L68.2425 1.28998H79.3725L85.1925 23.79H77.6025L76.7625 20.22H70.8225ZM74.0025 8.18999H73.6125L72.1425 14.49H75.4425L74.0025 8.18999Z" stroke="white" stroke-width="1.5" class="svg-elem-6 draw"></path>
+                <path d="M58.2141 16.29L62.1141 23.79H54.1941L51.2541 17.1H49.6941V23.79H42.4941V1.28998H53.8341C58.9941 1.28998 61.5741 3.91998 61.5741 9.17999C61.5741 12.78 60.4541 15.15 58.2141 16.29ZM51.3441 7.04999H49.6941V11.55H51.3441C52.224 11.55 52.854 11.46 53.2341 11.28C53.634 11.1 53.8341 10.69 53.8341 10.05V8.54999C53.8341 7.90998 53.634 7.49999 53.2341 7.31999C52.854 7.13999 52.224 7.04999 51.3441 7.04999Z" stroke="white" stroke-width="1.5" class="svg-elem-7 draw"></path>
+                <path d="M18.7383 12.57C18.7383 10.51 18.9083 8.74 19.2483 7.26C19.6083 5.76 20.1983 4.53 21.0183 3.57C21.8583 2.61 22.9583 1.9 24.3183 1.44C25.6784 0.979992 27.3584 0.75 29.3583 0.75C31.3784 0.75 33.0584 0.98 34.3983 1.44C35.7584 1.9 36.8483 2.61 37.6683 3.57C38.5083 4.53 39.0983 5.76 39.4383 7.26C39.7983 8.74 39.9783 10.51 39.9783 12.57C39.9783 14.53 39.8183 16.2499 39.4983 17.73C39.1784 19.1899 38.6084 20.41 37.7883 21.39C36.9884 22.3699 35.8983 23.11 34.5183 23.61C33.1583 24.09 31.4384 24.33 29.3583 24.33C27.2783 24.33 25.5483 24.09 24.1683 23.61C22.8083 23.11 21.7184 22.3699 20.8983 21.39C20.0984 20.41 19.5383 19.1899 19.2183 17.73C18.8984 16.2499 18.7383 14.53 18.7383 12.57ZM26.4783 8.82V18.18H29.4783C30.4784 18.18 31.1883 18.07 31.6083 17.85C32.0483 17.61 32.2683 17.08 32.2683 16.26V6.9H29.2383C28.2783 6.9 27.5783 7.02 27.1383 7.26C26.6984 7.48 26.4783 7.99999 26.4783 8.82Z" stroke="white" stroke-width="1.5" class="svg-elem-8 draw"></path>
+                <path d="M16.77 17.34L17.31 23.4C15.7699 24.0199 13.87 24.33 11.61 24.33C9.46999 24.33 7.69999 24.1 6.3 23.64C4.9 23.16 3.79001 22.44 2.97 21.48C2.14999 20.52 1.57 19.3 1.23 17.82C0.91 16.3399 0.75 14.59 0.75 12.57C0.75 10.61 0.9 8.89999 1.2 7.44C1.52 5.95999 2.08 4.72999 2.88 3.75C3.67999 2.74999 4.75999 1.99999 6.12 1.5C7.5 1 9.24 0.75 11.34 0.75C11.8 0.75 12.31 0.78 12.87 0.839998C13.45 0.879999 14.01 0.939999 14.55 1.02C15.1099 1.1 15.63 1.2 16.11 1.32C16.6099 1.42 17.01 1.54 17.31 1.68L16.23 7.2C14.63 6.85999 13.2 6.69 11.94 6.69C10.64 6.69 9.73999 6.81 9.24 7.05C8.74 7.29 8.49 7.77 8.49 8.49V17.91C8.95 18.01 9.40999 18.09 9.87 18.15C10.35 18.19 10.84 18.21 11.34 18.21C13.34 18.21 15.15 17.92 16.77 17.34Z" stroke="white" stroke-width="1.5" class="svg-elem-9 draw"></path>
+                <path d="M184.227 33.4805C184.227 32.6565 184.295 31.9485 184.431 31.3565C184.575 30.7565 184.811 30.2645 185.139 29.8805C185.475 29.4965 185.915 29.2125 186.459 29.0285C187.003 28.8445 187.675 28.7525 188.475 28.7525C189.283 28.7525 189.955 28.8445 190.491 29.0285C191.035 29.2125 191.471 29.4965 191.799 29.8805C192.135 30.2645 192.371 30.7565 192.507 31.3565C192.651 31.9485 192.723 32.6565 192.723 33.4805C192.723 34.2645 192.659 34.9525 192.531 35.5445C192.403 36.1285 192.175 36.6165 191.847 37.0085C191.527 37.4005 191.091 37.6965 190.539 37.8965C189.995 38.0885 189.307 38.1845 188.475 38.1845C187.643 38.1845 186.951 38.0885 186.399 37.8965C185.855 37.6965 185.419 37.4005 185.091 37.0085C184.771 36.6165 184.547 36.1285 184.419 35.5445C184.291 34.9525 184.227 34.2645 184.227 33.4805ZM187.323 31.9805V35.7245H188.523C188.923 35.7245 189.207 35.6805 189.375 35.5925C189.551 35.4965 189.639 35.2845 189.639 34.9565V31.2125H188.427C188.043 31.2125 187.763 31.2605 187.587 31.3565C187.411 31.4445 187.323 31.6525 187.323 31.9805Z" stroke="white" stroke-width="0.6" class="svg-elem-10 draw"></path>
+                <path d="M180.652 35.3885L180.868 37.8125C180.252 38.0605 179.492 38.1845 178.588 38.1845C177.732 38.1845 177.024 38.0925 176.464 37.9085C175.904 37.7165 175.46 37.4285 175.132 37.0445C174.804 36.6605 174.572 36.1725 174.436 35.5805C174.308 34.9885 174.244 34.2885 174.244 33.4805C174.244 32.6965 174.304 32.0125 174.424 31.4285C174.552 30.8365 174.776 30.3445 175.096 29.9525C175.416 29.5525 175.848 29.2525 176.392 29.0525C176.944 28.8525 177.64 28.7525 178.48 28.7525C178.664 28.7525 178.868 28.7645 179.092 28.7885C179.324 28.8045 179.548 28.8285 179.764 28.8605C179.988 28.8925 180.196 28.9325 180.388 28.9805C180.588 29.0205 180.748 29.0685 180.868 29.1245L180.436 31.3325C179.796 31.1965 179.224 31.1285 178.72 31.1285C178.2 31.1285 177.84 31.1765 177.64 31.2725C177.44 31.3685 177.34 31.5605 177.34 31.8485V35.6165C177.524 35.6565 177.708 35.6885 177.892 35.7125C178.084 35.7285 178.28 35.7365 178.48 35.7365C179.28 35.7365 180.004 35.6205 180.652 35.3885Z" stroke="white" stroke-width="0.6" class="svg-elem-11 draw"></path>
+                <path d="M197.649 33.8165L197.481 38.1845H194.469L195.021 29.1845H198.777L199.893 33.7685H200.001L201.117 29.1845H204.885L205.425 38.1845H202.413L202.245 33.8165H202.149L201.045 38.1845H198.849L197.733 33.8165H197.649Z" stroke="white" stroke-width="0.6" class="svg-elem-12 draw"></path>
+                <path d="M30.9665 28.7525L170.533 28.9161" stroke="white" stroke-width="2" class="svg-elem-13 draw"></path>
+            </svg>
+            <div class="skip-button">
+                <button onclick="skipLoading()">跳过动画 →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">CORALHYMN</div>
+        <button class="mobile-menu-toggle">菜单 ☰</button>
+        <ul class="nav-links">
+            <li><a href="#about">关于</a></li>
+            <li><a href="#projects">项目</a></li>
+            <li><a href="./portfolio.html">作品集</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#contact">联系</a></li>
+            <li><a href="./dh.html">软件</a></li>
+            <li><a href="https://github.com/CoralHymn" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1 class="hero-wordmark">CORALHYMN</h1>
+        <p class="hero-subtitle">独立游戏开发者 | B站UP主 | 公共艺术设计师</p>
+        <p class="hero-description">
+            我是一名热爱游戏开发的独立开发者，同时也是一名在校大学生。<br>
+            专注于使用 Godot Engine 创作互动体验，探索游戏设计与公共艺术的交叉领域。
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="./godot/index.html" class="btn btn-primary">
+                <i class="fas fa-gamepad"></i>
+                进入互动作品集
+            </a>
+            <a href="https://cc00.top/" class="btn btn-secondary" target="_blank">
+                <i class="fas fa-pen-fancy"></i>
+                访问博客
+            </a>
+        </div>
+    </section>
+
+    <!-- StoryStream Timeline -->
+    <section class="storystream" id="updates">
+        <h2 class="storystream-header">最新动态</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-timestamp">2026-04-14</div>
+                <div class="timeline-content">
+                    <div class="timeline-tag">发布</div>
+                    <h3 class="timeline-title">发布在Wplace中的青海湖夺旗战监测站点</h3>
+                    <p class="timeline-description">
+                        监测该区域的实时颜色占比，并给出该区域颜色占比的统计信息[https://wplace.icu/]
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-timestamp">2026-03-21</div>
+                <div class="timeline-content">
+                    <div class="timeline-tag">开源</div>
+                    <h3 class="timeline-title">ZipCloak 项目开源</h3>
+                    <p class="timeline-description">
+                        ZIP 文件混淆工具 ZipCloak 已在 GitHub 开源，欢迎贡献和使用。
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-timestamp">2026-02-24</div>
+                <div class="timeline-content">
+                    <div class="timeline-tag">合作</div>
+                    <h3 class="timeline-title">参与benng游戏的游戏开发工作</h3>
+                    <p class="timeline-description">
+                        负责benng项目组的游戏开发-主美-策划
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-timestamp">2026-02-14</div>
+                <div class="timeline-content">
+                    <div class="timeline-tag">更新</div>
+                    <h3 class="timeline-title">RWMP2_Decryptor_V.2.2.0发布</h3>
+                    <p class="timeline-description">
+                        针对铁锈战争模组的解密工具更新、减少软件体积、添加了对rwmod文件支持。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-section" id="projects">
+        <h2 class="section-title">精选项目</h2>
+        <div class="projects-grid">
+            <div class="project-card card-accent-mint">
+                <h3 class="project-title">互动作品集</h3>
+                <p class="project-description">
+                    使用 Godot Engine 构建的交互式游戏体验集合，展示独立游戏开发作品。
+                </p>
+                <div class="project-actions">
+                    <a href="./godot/index.html" class="btn btn-small btn-secondary">
+                        <i class="fas fa-external-link-alt"></i>
+                        进入体验
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card card-accent-purple">
+                <h3 class="project-title">技术博客</h3>
+                <p class="project-description">
+                    分享游戏开发、编程技术和设计思考的文章平台，持续更新中。
+                </p>
+                <div class="project-actions">
+                    <a href="https://cc00.top/" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fas fa-external-link-alt"></i>
+                        阅读文章
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card card-accent-yellow">
+                <h3 class="project-title">开源工具</h3>
+                <p class="project-description">
+                    RWMP2_Decryptor、ZipCloak 等实用工具的开源项目，服务于游戏开发社区。
+                </p>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="./dh.html" class="btn btn-small btn-secondary">
+                        <i class="fas fa-list"></i>
+                        查看列表
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Tools -->
+    <section class="skills-section" id="skills">
+        <h2 class="section-title">技能与工具</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3 class="skill-category-title">游戏开发</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Godot Engine</span>
+                    <span class="skill-tag">GDScript</span>
+                    <span class="skill-tag">Unity</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">RPG MV</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">编程语言</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Lua</span>
+                    <span class="skill-tag">Git</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">设计工具</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Blender</span>
+                    <span class="skill-tag">Photoshop</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Aseprite</span>
+                    <span class="skill-tag">After Effects</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3 class="skill-category-title">其他</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">视频剪辑</span>
+                    <span class="skill-tag">3D建模</span>
+                    <span class="skill-tag">像素艺术</span>
+                    <span class="skill-tag">声音设计</span>
+                    <span class="skill-tag">项目管理</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section class="about-section" id="about">
+        <div class="about-card">
+            <h2 class="about-title">关于我</h2>
+            <p class="about-text">
+                我是琴海奶油（Coralhymn），一名独立游戏开发者和公共艺术设计师。目前就读于四川电影电视学院，
+                专注于探索游戏作为艺术表达媒介的可能性。我相信游戏不仅仅是娱乐，更是连接人与世界、
+                传递情感和思想的桥梁。
+            </p>
+            <p class="about-text">
+                我活跃于 Bilibili 平台 & QQ，分享游戏开发教程和创意内容。
+                同时也积极参与开源社区，为游戏开发工具生态贡献力量。
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">完成项目</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25K+</div>
+                    <div class="stat-label">名下网站月访问量</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">~1K</div>
+                    <div class="stat-label">B站粉丝</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">年经验</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <h2 class="contact-title">联系我</h2>
+        <a href="mailto:viv888viv@163.com" class="contact-email">
+            <i class="fas fa-envelope"></i>
+            viv888viv@163.com
+        </a>
+
+        <div class="social-links">
+            <a href="https://github.com/CoralHymn" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://space.bilibili.com/321217967" target="_blank" title="BiliBili">
+                <i class="fab fa-video-camera"></i>
+            </a>
+            <a href="https://cc00.top/" target="_blank" title="博客">
+                <i class="fas fa-rss"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025-2026 Coralhymn | 琴海奶油</p>
+        <p>
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">粤ICP备2025450163号</a>
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44088102000198" target="_blank" rel="noopener">粤公网安备44088102000198号</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
