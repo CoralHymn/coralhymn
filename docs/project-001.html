@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>示例游戏项目 1 | Coralhymn</title>
+    <meta name="description" content="使用 Godot Engine 开发的独立游戏作品，探索独特的游戏机制和视觉风格">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Project detail specific styles */
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-4) 5%;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--jelly-mint);
+            margin-bottom: var(--space-3);
+            transition: color 150ms ease;
+        }
+
+        .back-link:hover {
+            color: var(--deep-link-blue);
+        }
+
+        .project-hero {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: var(--radius-feature);
+            margin-bottom: var(--space-3);
+            background: linear-gradient(135deg, var(--surface-slate), var(--canvas-black));
+        }
+
+        .project-header {
+            margin-bottom: var(--space-4);
+        }
+
+        .project-category {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: var(--jelly-mint);
+            margin-bottom: var(--space-1);
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 3.75rem;
+            font-weight: 900;
+            line-height: 0.80;
+            margin-bottom: var(--space-2);
+        }
+
+        .project-meta {
+            display: flex;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+            margin-bottom: var(--space-3);
+            padding: var(--space-2);
+            background: var(--surface-slate);
+            border-radius: var(--radius-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .meta-item {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .meta-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--secondary-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-family: var(--font-ui);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--hazard-white);
+        }
+
+        .project-content {
+            font-family: var(--font-ui);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.8;
+            color: var(--muted-text);
+        }
+
+        .project-content h2 {
+            font-family: var(--font-ui);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.0;
+            color: var(--hazard-white);
+            margin: var(--space-3) 0 var(--space-2);
+        }
+
+        .project-content p {
+            margin-bottom: var(--space-2);
+        }
+
+        .project-content ul {
+            margin-left: var(--space-2);
+            margin-bottom: var(--space-2);
+        }
+
+        .project-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2);
+            margin: var(--space-3) 0;
+        }
+
+        .gallery-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: var(--radius-card);
+            background: var(--surface-slate);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2.5rem;
+            }
+
+            .project-meta {
+                flex-direction: column;
+            }
+
+            .meta-item {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo"><a href="../index.html">CORALHYMN</a></div>
+        <button class="mobile-menu-toggle">菜单 ☰</button>
+        <ul class="nav-links">
+            <li><a href="../index.html#about">关于</a></li>
+            <li><a href="../index.html#projects">项目</a></li>
+            <li><a href="../portfolio.html" class="active">作品集</a></li>
+            <li><a href="../index.html#skills">技能</a></li>
+            <li><a href="../index.html#contact">联系</a></li>
+            <li><a href="../dh.html">软件</a></li>
+            <li><a href="https://github.com/CoralHymn" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="project-detail">
+        <!-- 返回链接 -->
+        <a href="../portfolio.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            返回作品集
+        </a>
+
+        <!-- 项目主图 -->
+        <img src="https://via.placeholder.com/1200x675/1a1a2e/ffffff?text=Game+Project+1+Hero" alt="项目主图" class="project-hero">
+
+        <!-- 项目标题 -->
+        <div class="project-header">
+            <div class="project-category">游戏开发</div>
+            <h1 class="project-title">示例游戏项目 1</h1>
+            
+            <!-- 项目元信息 -->
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">开发时间</div>
+                    <div class="meta-value">2026年3月 - 4月</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">引擎/工具</div>
+                    <div class="meta-value">Godot 4.x</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">类型</div>
+                    <div class="meta-value">解谜 / 冒险</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">平台</div>
+                    <div class="meta-value">Windows / Web</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 项目内容 -->
+        <article class="project-content">
+            <h2>项目概述</h2>
+            <p>
+                这是一个使用 Godot Engine 开发的独立游戏作品，探索了独特的游戏机制和视觉风格。
+                游戏的核心玩法围绕着[核心机制描述]，玩家需要在[游戏环境]中解决各种谜题，
+                逐步揭开故事背后的真相。
+            </p>
+
+            <h2>设计理念</h2>
+            <p>
+                在这个项目中，我试图探索[设计目标/理念]。通过[具体方法]，我希望能够创造出
+                一种[期望的玩家体验]。游戏的视觉风格受到了[灵感来源]的启发，采用了[艺术风格描述]。
+            </p>
+
+            <h2>技术亮点</h2>
+            <ul>
+                <li>自定义着色器实现[视觉效果]</li>
+                <li>基于[算法/系统]的动态关卡生成</li>
+                <li>优化的渲染管线，保持稳定的帧率</li>
+                <li>跨平台导出支持（Desktop + Web）</li>
+            </ul>
+
+            <h2>开发过程</h2>
+            <p>
+                项目从[起始时间]开始构思，经过[开发周期]的开发完成。在开发过程中，
+                我遇到了[主要挑战]，通过[解决方案]成功克服了这些困难。
+                整个开发过程让我学到了[收获/经验]。
+            </p>
+
+            <!-- 项目画廊 -->
+            <h2>项目截图</h2>
+            <div class="project-gallery">
+                <img src="https://via.placeholder.com/600x338/2d2d2d/ffffff?text=Screenshot+1" alt="截图 1" class="gallery-image">
+                <img src="https://via.placeholder.com/600x338/3cffd0/000000?text=Screenshot+2" alt="截图 2" class="gallery-image">
+                <img src="https://via.placeholder.com/600x338/5200ff/ffffff?text=Screenshot+3" alt="截图 3" class="gallery-image">
+            </div>
+
+            <h2>未来计划</h2>
+            <p>
+                目前游戏处于[当前状态]阶段。未来计划添加[新功能/内容]，
+                并优化[需要改进的部分]。预计将在[时间点]发布更新版本。
+            </p>
+
+            <!-- 项目链接 -->
+            <div class="project-links">
+                <a href="#" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-download"></i>
+                    下载游戏
+                </a>
+                <a href="#" class="btn btn-outline" target="_blank">
+                    <i class="fas fa-play"></i>
+                    在线试玩
+                </a>
+                <a href="https://github.com/CoralHymn" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i>
+                    源代码
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025-2026 Coralhymn | 琴海奶油</p>
+        <p>
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">粤ICP备2025450163号</a>
+            <img src="https://img.h440.top/PicGo/20250825114220920.png" alt="备案图标" />
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44088102000198" target="_blank" rel="noopener">粤公网安备44088102000198号</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集 | Coralhymn</title>
+    <meta name="description" content="琴海奶油的游戏开发作品、艺术设计和项目展示">
+    <!-- 社交分享预览 (Open Graph) -->
+    <meta property="og:title" content="作品集 | Coralhymn">
+    <meta property="og:description" content="独立游戏开发者、B站UP主、公共艺术设计师的作品集">
+    <meta property="og:url" content="https://www.coralhymn.com/portfolio.html">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Portfolio-specific styles */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-2);
+            margin-top: var(--space-3);
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: var(--radius-card);
+            overflow: hidden;
+            background: var(--surface-slate);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 150ms ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--jelly-mint);
+            transform: translateY(-4px);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, var(--surface-slate), var(--canvas-black));
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(19, 19, 19, 0.95), transparent);
+            padding: var(--space-3) var(--space-2) var(--space-2);
+            transform: translateY(100%);
+            transition: transform 150ms ease;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        .portfolio-title {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.0;
+            margin-bottom: 0.5rem;
+            color: var(--hazard-white);
+        }
+
+        .portfolio-category {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--jelly-mint);
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-description {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--secondary-text);
+        }
+
+        .portfolio-link-icon {
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--jelly-mint);
+            color: var(--absolute-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 150ms ease;
+        }
+
+        .portfolio-item:hover .portfolio-link-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .portfolio-item.clickable:hover {
+            box-shadow: 0 0 0 2px var(--jelly-mint);
+        }
+
+        /* Filter section */
+        .portfolio-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: var(--space-3);
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 8px 16px;
+            border-radius: var(--radius-feature);
+            background: var(--surface-slate);
+            color: var(--muted-text);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 150ms ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--hazard-white);
+        }
+
+        .filter-btn.active {
+            background: var(--jelly-mint);
+            color: var(--absolute-black);
+            border-color: var(--jelly-mint);
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: var(--space-6) var(--space-2);
+            color: var(--secondary-text);
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: var(--space-2);
+            opacity: 0.3;
+        }
+
+        .empty-state h3 {
+            font-family: var(--font-ui);
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--space-1);
+            color: var(--hazard-white);
+        }
+
+        .empty-state p {
+            font-family: var(--font-ui);
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-overlay {
+                transform: translateY(0);
+                background: linear-gradient(to top, rgba(19, 19, 19, 0.9), transparent);
+            }
+
+            .portfolio-link-icon {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo"><a href="./index.html">CORALHYMN</a></div>
+        <button class="mobile-menu-toggle">菜单 ☰</button>
+        <ul class="nav-links">
+            <li><a href="./index.html#about">关于</a></li>
+            <li><a href="./index.html#projects">项目</a></li>
+            <li><a href="./portfolio.html" class="active">作品集</a></li>
+            <li><a href="./index.html#skills">技能</a></li>
+            <li><a href="./index.html#contact">联系</a></li>
+            <li><a href="./dh.html">软件</a></li>
+            <li><a href="https://github.com/CoralHymn" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="page-container">
+        <h1 class="page-title">作品集</h1>
+        <p class="page-subtitle">
+            这里展示我的游戏开发作品、艺术设计和创意项目。
+            点击带有链接图标的作品可查看详细介绍。
+        </p>
+
+        <!-- 筛选按钮 -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="game">游戏</button>
+            <button class="filter-btn" data-filter="art">艺术</button>
+            <button class="filter-btn" data-filter="design">设计</button>
+            <button class="filter-btn" data-filter="other">其他</button>
+        </div>
+
+        <!-- 作品集网格 -->
+        <div class="portfolio-grid">
+            
+            <!-- 示例作品 1 - 可点击跳转 -->
+            <div class="portfolio-item clickable" data-category="game" onclick="location.href='./docs/project-001.html'">
+                <img src="https://via.placeholder.com/600x338/1a1a2e/ffffff?text=Game+Project+1" alt="游戏项目 1" class="portfolio-image">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">游戏开发</div>
+                    <h3 class="portfolio-title">示例游戏项目 1</h3>
+                    <p class="portfolio-description">这是一个使用 Godot Engine 开发的独立游戏作品，探索了独特的游戏机制和视觉风格。</p>
+                </div>
+            </div>
+
+            <!-- 示例作品 2 - 可点击跳转 -->
+            <div class="portfolio-item clickable" data-category="art" onclick="location.href='./docs/project-002.html'">
+                <img src="https://via.placeholder.com/600x338/2d2d2d/ffffff?text=Art+Project+1" alt="艺术项目 1" class="portfolio-image">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">公共艺术</div>
+                    <h3 class="portfolio-title">示例艺术项目 1</h3>
+                    <p class="portfolio-description">公共空间艺术装置设计，结合数字媒体与物理空间的互动体验。</p>
+                </div>
+            </div>
+
+            <!-- 示例作品 3 - 仅展示，无跳转 -->
+            <div class="portfolio-item" data-category="design">
+                <img src="https://via.placeholder.com/600x338/3cffd0/000000?text=Design+Project+1" alt="设计项目 1" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">UI/UX 设计</div>
+                    <h3 class="portfolio-title">示例设计项目 1</h3>
+                    <p class="portfolio-description">界面设计与用户体验优化项目，专注于简洁高效的交互流程。</p>
+                </div>
+            </div>
+
+            <!-- 示例作品 4 - 可点击跳转 -->
+            <div class="portfolio-item clickable" data-category="game" onclick="location.href='./docs/project-003.html'">
+                <img src="https://via.placeholder.com/600x338/5200ff/ffffff?text=Game+Project+2" alt="游戏项目 2" class="portfolio-image">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">游戏开发</div>
+                    <h3 class="portfolio-title">示例游戏项目 2</h3>
+                    <p class="portfolio-description">参加 Game Jam 活动开发的限时作品，主题为"连接"的解谜游戏。</p>
+                </div>
+            </div>
+
+            <!-- 示例作品 5 - 仅展示 -->
+            <div class="portfolio-item" data-category="other">
+                <img src="https://via.placeholder.com/600x338/ffd700/000000?text=Other+Project+1" alt="其他项目 1" class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">实验项目</div>
+                    <h3 class="portfolio-title">示例实验项目 1</h3>
+                    <p class="portfolio-description">技术探索和原型开发，尝试新的编程范式和视觉效果。</p>
+                </div>
+            </div>
+
+            <!-- 示例作品 6 - 可点击跳转 -->
+            <div class="portfolio-item clickable" data-category="art" onclick="location.href='./docs/project-004.html'">
+                <img src="https://via.placeholder.com/600x338/ff6b6b/ffffff?text=Art+Project+2" alt="艺术项目 2" class="portfolio-image">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">数字艺术</div>
+                    <h3 class="portfolio-title">示例艺术项目 2</h3>
+                    <p class="portfolio-description">生成艺术与算法美学探索，使用代码创作的视觉作品系列。</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 空状态提示（当没有作品时显示） -->
+        <!--
+        <div class="empty-state" style="display: none;">
+            <i class="fas fa-images"></i>
+            <h3>暂无作品</h3>
+            <p>作品集正在整理中，敬请期待更新～</p>
+        </div>
+        -->
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2025-2026 Coralhymn | 琴海奶油</p>
+        <p>
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">粤ICP备2025450163号</a>
+            <img src="https://img.h440.top/PicGo/20250825114220920.png" alt="备案图标" />
+            <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44088102000198" target="_blank" rel="noopener">粤公网安备44088102000198号</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Portfolio-specific filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filter = btn.dataset.filter;
+
+                    // Filter items
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
