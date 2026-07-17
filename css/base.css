@@ -1,0 +1,83 @@
+/* ========================================
+   Coralhymn Website - Base Styles
+   CSS Variables, Reset, Typography
+   ======================================== */
+
+/* ========== CSS Variables ========== */
+:root {
+  /* Colors */
+  --canvas-black: #131313;
+  --jelly-mint: #3cffd0;
+  --verge-ultraviolet: #5200ff;
+  --hazard-white: #ffffff;
+  --surface-slate: #2d2d2d;
+  --deep-link-blue: #3860be;
+  --console-mint-border: #309875;
+  --secondary-text: #949494;
+  --muted-text: #e9e9e9;
+  --absolute-black: #000000;
+  --purple-rule: #3d00bf;
+  --image-frame: #313131;
+  --focus-cyan: #1eaedb;
+  --dim-gray: #8c8c8c;
+
+  /* Typography */
+  --font-display: 'Anton', Impact, sans-serif;
+  --font-ui: 'Space Grotesk', Helvetica, Arial, sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', Courier, monospace;
+
+  /* Spacing */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Border Radius */
+  --radius-input: 2px;
+  --radius-image: 3px;
+  --radius-small: 4px;
+  --radius-card: 20px;
+  --radius-feature: 24px;
+  --radius-large: 30px;
+  --radius-pill: 40px;
+}
+
+/* ========== Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--canvas-black);
+  color: var(--hazard-white);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+a {
+  color: var(--hazard-white);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+a:hover {
+  color: var(--deep-link-blue);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
