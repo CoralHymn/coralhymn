@@ -15,23 +15,14 @@
     <!-- Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 自定义样式 -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="logo"><a href="./index.html">CORALHYMN</a></div>
-        <button class="mobile-menu-toggle">菜单 ☰</button>
-        <ul class="nav-links">
-            <li><a href="./index.html#about">关于</a></li>
-            <li><a href="./index.html#projects">项目</a></li>
-            <li><a href="./portfolio.html">作品集</a></li>
-            <li><a href="./index.html#skills">技能</a></li>
-            <li><a href="./index.html#contact">联系</a></li>
-            <li><a href="./dh.html" class="active">软件</a></li>
-            <li><a href="https://github.com/CoralHymn" target="_blank">GitHub</a></li>
-        </ul>
-    </nav>
+    <!-- 导航栏 (由 js/nav.js 动态渲染) -->
+    <div id="nav-placeholder" data-active="dh"></div>
 
     <!-- 主内容区 -->
     <main class="page-container">
@@ -131,12 +122,11 @@
         </div>
     </main>
 
-    <!-- 页脚 -->
-    <footer>
-        <p>&copy; 2025-2026 Coralhymn | 琴海奶油</p>
-    </footer>
+    <!-- 页脚 (由 js/nav.js 动态渲染) -->
+    <div id="footer-placeholder"></div>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

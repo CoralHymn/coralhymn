@@ -16,7 +16,10 @@
     <!-- Font Awesome 图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- 自定义样式 -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <!-- ========== 开屏加载动画 ========== -->
@@ -43,20 +46,8 @@
         </div>
     </div>
 
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="logo">CORALHYMN</div>
-        <button class="mobile-menu-toggle">菜单 ☰</button>
-        <ul class="nav-links">
-            <li><a href="#about">关于</a></li>
-            <li><a href="#projects">项目</a></li>
-            <li><a href="./portfolio.html">作品集</a></li>
-            <li><a href="#skills">技能</a></li>
-            <li><a href="#contact">联系</a></li>
-            <li><a href="./dh.html">软件</a></li>
-            <li><a href="https://github.com/CoralHymn" target="_blank">GitHub</a></li>
-        </ul>
-    </nav>
+    <!-- 导航栏 (由 js/nav.js 动态渲染) -->
+    <div id="nav-placeholder" data-active="home"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -67,13 +58,13 @@
             专注于使用 Godot Engine 创作互动体验，探索游戏设计与公共艺术的交叉领域。
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="./godot/index.html" class="btn btn-primary">
-                <i class="fas fa-gamepad"></i>
-                进入互动作品集
-            </a>
-            <a href="https://cc00.top/" class="btn btn-secondary" target="_blank">
+            <a href="https://cc00.top/" class="btn btn-primary" target="_blank">
                 <i class="fas fa-pen-fancy"></i>
                 访问博客
+            </a>
+            <a href="https://github.com/CoralHymn" class="btn btn-secondary" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub 主页
             </a>
         </div>
     </section>
@@ -135,12 +126,12 @@
             <div class="project-card card-accent-mint">
                 <h3 class="project-title">互动作品集</h3>
                 <p class="project-description">
-                    使用 Godot Engine 构建的交互式游戏体验集合，展示独立游戏开发作品。
+                    使用 Godot Engine 构建的交互式游戏体验集合，展示独立游戏开发作品。即将迁移至独立域名。
                 </p>
                 <div class="project-actions">
-                    <a href="./godot/index.html" class="btn btn-small btn-secondary">
-                        <i class="fas fa-external-link-alt"></i>
-                        进入体验
+                    <a href="https://github.com/CoralHymn" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        前往 GitHub
                     </a>
                 </div>
             </div>
@@ -283,12 +274,11 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
-    <footer>
-        <p>&copy; 2025-2026 Coralhymn | 琴海奶油</p>
-    </footer>
+    <!-- 页脚 (由 js/nav.js 动态渲染) -->
+    <div id="footer-placeholder"></div>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
