@@ -8,26 +8,32 @@
   'use strict';
 
   const NAV_ITEMS = [
-    { href: './index.html#about', label: '关于', page: 'about' },
-    { href: './index.html#projects', label: '项目', page: 'projects' },
-    { href: './portfolio.html', label: '作品集', page: 'portfolio' },
-    { href: './index.html#skills', label: '技能', page: 'skills' },
-    { href: './index.html#contact', label: '联系', page: 'contact' },
-    { href: './dh.html', label: '软件', page: 'dh' },
+    { href: '/index.html#about', label: '关于', page: 'about' },
+    { href: '/index.html#projects', label: '项目', page: 'projects' },
+    { href: '/portfolio.html', label: '作品集', page: 'portfolio' },
+    { href: '/index.html#skills', label: '技能', page: 'skills' },
+    { href: '/index.html#contact', label: '联系', page: 'contact' },
+    { href: '/dh.html', label: '软件', page: 'dh' },
     { href: 'https://github.com/CoralHymn', label: 'GitHub', page: 'github', external: true }
   ];
 
   function getNavHTML(activePage) {
+    const isHomePage = activePage === 'home';
     const links = NAV_ITEMS.map(item => {
       const isActive = item.page === activePage;
       const target = item.external ? ' target="_blank"' : '';
       const activeClass = isActive ? ' class="active"' : '';
-      return `<li><a href="${item.href}"${activeClass}${target}>${item.label}</a></li>`;
+      // On homepage use simple anchors for smooth scroll; on other pages use full path
+      let href = item.href;
+      if (isHomePage && href.startsWith('/index.html#')) {
+        href = '#' + href.split('#')[1];
+      }
+      return `<li><a href="${href}"${activeClass}${target}>${item.label}</a></li>`;
     }).join('\n            ');
 
     return `
     <nav class="navbar">
-        <div class="logo"><a href="./index.html">CORALHYMN</a></div>
+        <div class="logo"><a href="/index.html">CORALHYMN</a></div>
         <button class="mobile-menu-toggle">菜单 ☰</button>
         <ul class="nav-links">
             ${links}
