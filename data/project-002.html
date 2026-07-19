@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>示例艺术项目 1 | Coralhymn</title>
-    <meta name="description" content="公共空间艺术装置设计，结合数字媒体与物理空间的互动体验">
+    <title>rocom-helper — 洛克王国助手 | Coralhymn</title>
+    <meta name="description" content="基于 Python 与 内核级虚拟驱动 的洛克王国自动化游戏工具">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -19,23 +19,39 @@
     <div id="nav-placeholder" data-active="portfolio"></div>
     <main class="project-detail">
         <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
-        <img src="https://via.placeholder.com/1200x675/2d2d2d/ffffff?text=Art+Project+1" alt="项目主图" class="project-hero">
+        <img src="https://via.placeholder.com/1200x675/2b2622/f7f5f0?text=rocom-helper" alt="rocom-helper GUI 界面" class="project-hero">
         <div class="project-header">
-            <div class="project-category">公共艺术</div>
-            <h1 class="project-title">示例艺术项目 1</h1>
+            <div class="project-category">游戏工具 · Python</div>
+            <h1 class="project-title">rocom-helper — 洛克王国助手</h1>
             <div class="project-meta">
                 <div class="meta-item"><div class="meta-label">创作时间</div><div class="meta-value">2026年</div></div>
-                <div class="meta-item"><div class="meta-label">媒介</div><div class="meta-value">混合媒介</div></div>
-                <div class="meta-item"><div class="meta-label">地点</div><div class="meta-value">待定</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">Python + cv2 + DD 驱动</div></div>
+                <div class="meta-item"><div class="meta-label">版本</div><div class="meta-value">v1.1.2</div></div>
             </div>
         </div>
         <article class="project-content">
             <h2>项目概述</h2>
-            <p>这是一个公共空间艺术装置设计项目，结合了数字媒体与物理空间的互动体验。作品探索了人与环境、技术与自然之间的关系。</p>
-            <h2>设计理念</h2>
-            <p>通过[具体技术/方法]，创造出一个能够与观众产生共鸣的互动空间。装置会根据[触发条件]产生变化，让每位观众都能获得独特的体验。</p>
-            <h2>技术实现</h2>
-            <p>使用传感器捕捉观众的行为，通过实时渲染引擎生成视觉反馈。整个系统基于[技术栈]构建，确保了稳定性和可扩展性。</p>
+            <p>rocom-helper 是一个面向《洛克王国》的自动化辅助工具，使用 Python + tkinter 构建图形界面，通过 <strong>DD 内核级虚拟驱动</strong>在底层模拟鼠标键盘输入，绕过用户态 API hook，实现对游戏的安全自动化操作。</p>
+            <p>项目核心挑战在于 <strong>反作弊（ACE/TenProtect）</strong> 环境下的隐蔽性——全程不使用 EnumWindows、FindWindow、SendInput、mouse_event 等可被监控的用户态 API，所有输入走内核 HID 设备路径，所有画面读取走 GDI BitBlt 纯读操作。</p>
+
+            <h2>核心功能</h2>
+            <p><strong>自动点击</strong>：基于三次贝塞尔曲线的鼠标轨迹生成，配合正弦波调速模拟人类先加速后减速的物理惯性，并在移动路径中注入 10~20ms 间隔的随机微抖动。点击间隔、按下持续、偏移范围、曲线幅度全部支持范围随机取值，避免规律性特征。</p>
+            <p><strong>牵手模式（战斗辅助）</strong>：使用 opencv-python 的 <code>cv2.matchTemplate(TM_CCOEFF_NORMED)</code> 进行模板匹配，Canny 边缘检测预处理后判定战斗 UI 状态。检测到进战后通过 DD 驱动自动按下技能键（默认 x），并引入 energy.png 按键钩子机制——energy 图标不可见时跳过按键，防止脱战后误触发。</p>
+            <p><strong>一键更新</strong>：C# Windows Forms 编写的独立更新器（编译后仅 ~18KB），带可视化下载进度条和百分比显示。使用安全单线程下载（避免 Cloudflare R2 Range 请求损坏），支持自我替换。</p>
+            <p><strong>全局热键</strong>：通过 <code>GetAsyncKeyState</code> 轮询实现 Ctrl+Shift+S/P/X 快捷键，窗口最小化/失焦时仍正常响应。</p>
+
+            <h2>技术栈</h2>
+            <p><strong>前端 GUI</strong>：Python tkinter + ttk，主题支持切换，反检测参数独立成行布局。<br>
+            <strong>内核驱动</strong>：DD64.dll（C++ 内核驱动），通过 <code>DD_btn</code>/<code>DD_mov</code>/<code>DD_key</code> 完成输入，<code>DD_todc</code> 转换 Windows VK 键码到 DD 专属键码。<br>
+            <strong>图像识别</strong>：opencv-python-headless + numpy，GDI BitBlt 屏幕捕获 + Canny 边缘检测 + 归一化互相关模板匹配。<br>
+            <strong>打包部署</strong>：PyInstaller 双 exe 策略（主程序 onedir + 更新器 onefile）+ csc.exe 编译 C#。<br>
+            <strong>配置持久化</strong>：`default.json` + `custom.json` 双文件方案，主题 JSON 文件可扩展。</p>
+
+            <h2>安全设计</h2>
+            <p>所有 API 调用经过 ACE 审计分级：<strong>P0（高危）</strong>如 EnumWindows、SendInput 完全清除；<strong>P1（中危）</strong>如 FindWindow 以纯读方式受限调用；<strong>P2（低危）</strong>如 GetDC(0)、GetAsyncKeyState 作为启动时一次性调用留存。输入路径全程走 DD 内核驱动，无用户态 API 暴露。</p>
+
+            <h2>项目地址</h2>
+            <p><a href="https://rocom.benng.cc/rocom-helper/" target="_blank">官方网页 →</a></p>
         </article>
     </main>
     <!-- 页脚 (由 js/nav.js 动态渲染) -->
