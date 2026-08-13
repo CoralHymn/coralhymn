@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rocom-helper — 洛克王国助手 | Coralhymn</title>
-    <meta name="description" content="基于 Python 与 内核级虚拟驱动 的洛克王国自动化游戏工具">
+    <meta name="description" content="基于 Python、DD 内核级虚拟驱动与 YOLO26 的洛克王国自动化游戏工具">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -21,40 +21,52 @@
         <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
         <img src="https://img.h440.top/PicGo/20260720000600166.png" alt="rocom-helper GUI 界面" class="project-hero">
         <div class="project-header">
-            <div class="project-category">游戏工具 · Python</div>
+            <div class="project-category">游戏工具 · Python + YOLO</div>
             <h1 class="project-title">rocom-helper — 洛克王国助手</h1>
             <div class="project-meta">
                 <div class="meta-item"><div class="meta-label">创作时间</div><div class="meta-value">2026年</div></div>
-                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">Python + cv2 + DD 驱动</div></div>
-                <div class="meta-item"><div class="meta-label">版本</div><div class="meta-value">v1.1.2</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">Python + cv2 + YOLO26 + DD 驱动</div></div>
+                <div class="meta-item"><div class="meta-label">版本</div><div class="meta-value">v1.2.0</div></div>
             </div>
         </div>
         <article class="project-content">
             <h2>项目概述</h2>
-            <p>rocom-helper 是一个面向《洛克王国》的自动化辅助工具，使用 Python + tkinter 构建图形界面，通过 <strong>DD 内核级虚拟驱动</strong>在底层模拟鼠标键盘输入，绕过用户态 API hook，实现对游戏的安全自动化操作。</p>
+            <p>rocom-helper 是一个面向《洛克王国》的自动化辅助工具，使用 Python + tkinter 构建图形界面，通过 <strong>DD 内核级虚拟驱动</strong>在底层模拟鼠标键盘输入，绕过用户态 API hook，实现对游戏的安全自动化操作。v1.2.0 加入 <strong>YOLO26 AI 视觉捉宠</strong>与灵动岛悬浮窗，让工具从固定模板识别升级为模型驱动的实时视觉方案。</p>
             <p>项目核心挑战在于 <strong>反作弊（ACE/TenProtect）</strong> 环境下的隐蔽性——全程不使用 EnumWindows、FindWindow、SendInput、mouse_event 等可被监控的用户态 API，所有输入走内核 HID 设备路径，所有画面读取走 GDI BitBlt 纯读操作。</p>
 
             <h2>核心功能</h2>
             <p><strong>自动点击</strong>：基于三次贝塞尔曲线的鼠标轨迹生成，配合正弦波调速模拟人类先加速后减速的物理惯性，并在移动路径中注入 10~20ms 间隔的随机微抖动。点击间隔、按下持续、偏移范围、曲线幅度全部支持范围随机取值，避免规律性特征。</p>
             <p><strong>牵手模式（战斗辅助）</strong>：使用 opencv-python 的 <code>cv2.matchTemplate(TM_CCOEFF_NORMED)</code> 进行模板匹配，Canny 边缘检测预处理后判定战斗 UI 状态。检测到进战后通过 DD 驱动自动按下技能键（默认 x），并引入 energy.png 按键钩子机制——energy 图标不可见时跳过按键，防止脱战后误触发。</p>
-            <p><strong>一键更新</strong>：C# Windows Forms 编写的独立更新器（编译后仅 ~18KB），带可视化下载进度条和百分比显示。使用安全单线程下载（避免 Cloudflare R2 Range 请求损坏），支持自我替换。</p>
+            <p><strong>AI 智能捉宠</strong>：基于 YOLO26 的自训练精灵识别模型，使用 ONNX Runtime 加速推理，支持 CPU 与 NVIDIA GPU（CUDA + cuDNN）。检测到目标后自动瞄准并执行丢球，支持 simple、simple2、iterative 三种抓捕模式，可配置忽略区域避免误识别 UI。</p>
+            <p><strong>灵动岛悬浮窗</strong>：常用操作以悬浮窗形式置于屏幕上方，不需要切换主界面即可启停自动点击、牵手模式与 AI 模式。</p>
+            <p><strong>一键更新</strong>：C# Windows Forms 编写的独立更新器（编译后仅 ~15KB），带可视化下载进度条和百分比显示。v1.2.0 起支持增量更新，只下载差异文件。</p>
             <p><strong>全局热键</strong>：通过 <code>GetAsyncKeyState</code> 轮询实现 Ctrl+Shift+S/P/X 快捷键，窗口最小化/失焦时仍正常响应。</p>
 
             <h2>技术栈</h2>
             <p><strong>前端 GUI</strong>：Python tkinter + ttk，主题支持切换，反检测参数独立成行布局。<br>
             <strong>内核驱动</strong>：DD64.dll（C++ 内核驱动），通过 <code>DD_btn</code>/<code>DD_mov</code>/<code>DD_key</code> 完成输入，<code>DD_todc</code> 转换 Windows VK 键码到 DD 专属键码。<br>
-            <strong>图像识别</strong>：opencv-python-headless + numpy，GDI BitBlt 屏幕捕获 + Canny 边缘检测 + 归一化互相关模板匹配。<br>
+            <strong>视觉识别</strong>：ultralytics + YOLO26 训练与推理，ONNX Runtime 加速；战斗状态检测保留 opencv-python 的 Canny 边缘检测 + 归一化互相关模板匹配。<br>
+            <strong>训练工具链</strong>：内置标注、数据集切分、训练、验证与 ONNX 导出 GUI，支持 yolo26n / yolo26s / yolo26m 等模型。<br>
             <strong>打包部署</strong>：PyInstaller 双 exe 策略（主程序 onedir + 更新器 onefile）+ csc.exe 编译 C#。<br>
             <strong>配置持久化</strong>：`default.json` + `custom.json` 双文件方案，主题 JSON 文件可扩展。</p>
+
+            <h2>AI 视觉捉宠</h2>
+            <p>训练模块支持在截图上拖拽框选精灵并自动生成 YOLO 格式标注，按 8:2 切分训练集与验证集。模型权重导出 ONNX 后接入主程序，支持模型选择、在线下载与本地模型导入。</p>
+            <ul>
+                <li>YOLO26 精灵检测，CPU 与 GPU 双推理路径</li>
+                <li>实时检测、自动瞄准、智能丢球与冷却机制</li>
+                <li>支持配置忽略区域，避免误识别 UI 元素</li>
+                <li>大量出没精灵模型在周四晚更新后推送</li>
+            </ul>
 
             <h2>安全设计</h2>
             <p>所有 API 调用经过 ACE 审计分级：<strong>P0（高危）</strong>如 EnumWindows、SendInput 完全清除；<strong>P1（中危）</strong>如 FindWindow 以纯读方式受限调用；<strong>P2（低危）</strong>如 GetDC(0)、GetAsyncKeyState 作为启动时一次性调用留存。输入路径全程走 DD 内核驱动，无用户态 API 暴露。</p>
 
             <h2>项目地址</h2>
             <div class="project-links">
-                <a href="https://github.com/CoralHymn" class="btn btn-outline" target="_blank">
-                    <i class="fab fa-github"></i>
-                    源代码（在没被ACE拉黑名单前1按钮暂不开源）
+                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-lock"></i>
+                    项目暂未开源
                 </a>
             </div>
         </article>

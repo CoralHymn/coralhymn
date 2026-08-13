@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CosBox — 状态驱动叙事客户端 | Coralhymn</title>
+    <meta name="description" content="面向 AI 角色扮演的状态驱动叙事客户端，基于 TypeScript、SvelteKit 与 Tauri 2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="nav-placeholder" data-active="portfolio"></div>
+    <main class="project-detail">
+        <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
+        <img src="../images/portfolio/cosbox.jpg" alt="CosBox" class="project-hero">
+        <div class="project-header">
+            <div class="project-category">AI 工具 · TypeScript</div>
+            <h1 class="project-title">CosBox</h1>
+            <div class="project-meta">
+                <div class="meta-item"><div class="meta-label">类型</div><div class="meta-value">AI 叙事客户端</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">SvelteKit + Dexie.js + Tauri 2</div></div>
+                <div class="meta-item"><div class="meta-label">平台</div><div class="meta-value">Windows / Android / Web</div></div>
+            </div>
+        </div>
+        <article class="project-content">
+            <h2>项目概述</h2>
+            <p>CosBox 是一个面向 AI 角色扮演的状态驱动叙事客户端。核心不是聊天软件，而是结构化角色状态：穿着、衣柜、当前地点、地点库、日程与属性都是数据，不是消息附件。LLM 通过 Context Pipeline 精确感知当前状态、世界信息与压缩后的对话。</p>
+
+            <h2>核心功能</h2>
+            <ul>
+                <li>角色状态编辑器与实时预览，状态变更自动生成快照</li>
+                <li>类 Git 增量快照版本图，支持任意点回溯与分支</li>
+                <li>地点库与衣柜分类管理，换装槽位只匹配类型正确的衣物</li>
+                <li>World Info 触发、状态摘要与历史压缩组成的 Context Pipeline</li>
+                <li>兼容 OpenAI、Claude、Gemini、DeepSeek、Ollama 等二十余种 LLM 端点</li>
+                <li>SillyTavern V3 角色卡导入导出</li>
+            </ul>
+
+            <h2>工程亮点</h2>
+            <p>TypeScript strict 模式与零 any 约束，核心层使用纯函数维护状态模型和快照版本图；Svelte 5 Runes 提供响应式状态；Dexie.js 将快照、World Info 与配置持久化到 IndexedDB。项目同时配备 Vitest 单元测试与 Playwright 端到端测试，并已接入 Tauri 2 桌面与 Android 打包骨架。</p>
+
+            <h2>项目地址</h2>
+            <div class="project-links">
+                <a href="https://github.com/CoralHymn/CosBox" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> 源代码
+                </a>
+            </div>
+        </article>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/nav.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

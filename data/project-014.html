@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZipCloak — ZIP 文件混淆工具 | Coralhymn</title>
+    <meta name="description" content="对指定类型文件进行混淆处理，使文件被系统识别为文件夹">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="nav-placeholder" data-active="portfolio"></div>
+    <main class="project-detail">
+        <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
+        <img src="../images/portfolio/zipcloak.jpg" alt="ZipCloak" class="project-hero">
+        <div class="project-header">
+            <div class="project-category">工具 · Python</div>
+            <h1 class="project-title">ZipCloak</h1>
+            <div class="project-meta">
+                <div class="meta-item"><div class="meta-label">类型</div><div class="meta-value">文件混淆工具</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">Python + tkinter</div></div>
+                <div class="meta-item"><div class="meta-label">平台</div><div class="meta-value">Windows</div></div>
+            </div>
+        </div>
+        <article class="project-content">
+            <h2>项目概述</h2>
+            <p>ZipCloak 是一个 ZIP 文件混淆工具，对指定类型的文件进行特殊处理，使某个文件被系统认为是文件夹，用于保护压缩包内容不被直接查看。</p>
+
+            <h2>核心功能</h2>
+            <ul>
+                <li>混淆模式：选择源文件夹与输出 ZIP，设置需要混淆的文件扩展名</li>
+                <li>恢复模式：选择混淆后的 ZIP 并恢复到指定目录</li>
+                <li>配置文件持久化：自动生成 zipcloak_config.json</li>
+                <li>中文 / 英文多语言切换，语言包可扩展</li>
+                <li>可选压缩与运行日志</li>
+            </ul>
+
+            <h2>项目地址</h2>
+            <div class="project-links">
+                <a href="https://github.com/CoralHymn/ZipCloak" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> 源代码
+                </a>
+            </div>
+        </article>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/nav.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

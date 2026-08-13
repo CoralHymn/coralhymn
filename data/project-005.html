@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash-Gate — 节点端口分配器 | Coralhymn</title>
+    <meta name="description" content="基于 Python 与 Mihomo 内核的 Clash Verge 节点端口分配器">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="nav-placeholder" data-active="portfolio"></div>
+    <main class="project-detail">
+        <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
+        <img src="../images/portfolio/clash-gate.jpg" alt="Clash-Gate" class="project-hero">
+        <div class="project-header">
+            <div class="project-category">工具 · Python</div>
+            <h1 class="project-title">Clash-Gate</h1>
+            <div class="project-meta">
+                <div class="meta-item"><div class="meta-label">类型</div><div class="meta-value">桌面工具</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">Python + Mihomo</div></div>
+                <div class="meta-item"><div class="meta-label">平台</div><div class="meta-value">Windows</div></div>
+            </div>
+        </div>
+        <article class="project-content">
+            <h2>项目概述</h2>
+            <p>Clash-Gate 是一个基于 Python + ttk/ttkthemes 的 Clash Verge 节点端口分配器。它读取 Clash Verge 本地订阅文件，把不同订阅里的节点或策略组分配到本机不同端口，并利用 Mihomo 内核的 listeners 功能让每个端口固定使用指定节点出口。</p>
+
+            <h2>核心功能</h2>
+            <ul>
+                <li>自动发现 Clash Verge Rev 数据目录并解析 profiles.yaml</li>
+                <li>多个订阅同时加载，左侧树按订阅分组显示</li>
+                <li>节点/策略组分配到任意端口，支持 HTTP + SOCKS5 mixed 入站</li>
+                <li>每个订阅启动独立 Mihomo 引擎，不干扰正在运行的 Clash Verge</li>
+                <li>端口测速，显示延迟与下载速度</li>
+                <li>轮询外部控制器，记录访问日志与上下行流量</li>
+            </ul>
+
+            <h2>技术实现</h2>
+            <p>项目拆分为配置生成、引擎管理、GUI、端口测速、流量日志和订阅解析模块。每个订阅文件会被复制为独立运行配置，写入 mixed 类型 listeners，再以独立 Mihomo 进程启动。访问日志通过每个引擎的 /connections 接口定时获取。</p>
+
+            <h2>项目地址</h2>
+            <div class="project-links">
+                <a href="https://github.com/CoralHymn/Clash-Gate" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> 源代码
+                </a>
+            </div>
+        </article>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/nav.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

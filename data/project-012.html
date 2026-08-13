@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wplace Discord Bot — 像素监控机器人 | Coralhymn</title>
+    <meta name="description" content="实时监控 Wplace 像素画变化并通过 Discord 发送通知的机器人">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="nav-placeholder" data-active="portfolio"></div>
+    <main class="project-detail">
+        <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
+        <img src="../images/portfolio/wplace-discord.jpg" alt="wplace-discord-bot" class="project-hero">
+        <div class="project-header">
+            <div class="project-category">监控机器人 · Python</div>
+            <h1 class="project-title">wplace Discord Bot</h1>
+            <div class="project-meta">
+                <div class="meta-item"><div class="meta-label">类型</div><div class="meta-value">Discord 机器人</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">Python + Selenium + discord.py</div></div>
+                <div class="meta-item"><div class="meta-label">平台</div><div class="meta-value">Windows / Linux</div></div>
+            </div>
+        </div>
+        <article class="project-content">
+            <h2>项目概述</h2>
+            <p>wplace Discord Bot 是一个实时监控 Wplace 像素画变化并通过 Discord 发送通知的机器人，同时支持从 wplace.eralyon.net 回溯任意历史日期的像素画截图。项目支持多区域监控、独立 Webhook 与完整的权限体系。</p>
+
+            <h2>核心功能</h2>
+            <ul>
+                <li>Selenium 实时监控指定区域，自动截图比对</li>
+                <li>像素级差异对比并生成高亮对比图</li>
+                <li>历史日期像素画截图</li>
+                <li>Discord 机器人或 Webhook 通知</li>
+                <li>21 个命令：监控管理、截图、历史、权限、状态查询</li>
+                <li>白名单与超级管理员权限控制</li>
+            </ul>
+
+            <h2>项目地址</h2>
+            <div class="project-links">
+                <a href="https://github.com/CoralHymn/wplace-discord-bot-open-source" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> 源代码
+                </a>
+            </div>
+        </article>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/nav.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

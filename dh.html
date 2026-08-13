@@ -29,7 +29,7 @@
         <h1 class="page-title">软件列表</h1>
         <p class="page-subtitle">
             这里展示我开发的工具、插件和小应用，持续更新中...
-            所有项目均开源托管在 GitHub，欢迎贡献和使用。
+            多数项目开源托管在 GitHub，欢迎贡献和使用。
         </p>
 
         <!-- 筛选标签 -->
@@ -38,11 +38,217 @@
             <button class="filter-tab" data-filter="tool">工具</button>
             <button class="filter-tab" data-filter="game">游戏</button>
             <button class="filter-tab" data-filter="plugin">插件</button>
+            <button class="filter-tab" data-filter="web">网站</button>
+            <button class="filter-tab" data-filter="ai">AI</button>
         </div>
 
         <!-- 软件列表（StoryStream 风格） -->
         <div class="software-list">
-            
+
+            <!-- Clash-Gate -->
+            <div class="software-item" data-category="tool">
+                <div class="software-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="software-info">
+                    <h3>Clash-Gate - 节点端口分配器</h3>
+                    <p>读取 Clash Verge 订阅，把不同订阅的节点分配到独立本地端口，支持多订阅隔离、端口测速与访问日志。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">工具</span>
+                        <span class="timeline-tag">Python</span>
+                        <span class="timeline-tag">开源</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/Clash-Gate" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                </div>
+            </div>
+
+            <!-- CosBox -->
+            <div class="software-item" data-category="ai">
+                <div class="software-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="software-info">
+                    <h3>CosBox - 状态驱动叙事客户端</h3>
+                    <p>面向 AI 角色扮演的叙事客户端，角色状态、衣柜、地点与日程均为结构化版本快照，支持多种 LLM 端点。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">AI</span>
+                        <span class="timeline-tag">TypeScript</span>
+                        <span class="timeline-tag">Tauri</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/CosBox" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pacific-Abyss -->
+            <div class="software-item" data-category="game">
+                <div class="software-icon">
+                    <i class="fas fa-ship"></i>
+                </div>
+                <div class="software-info">
+                    <h3>Pacific-Abyss - 铁锈战争深海大洋 Mod</h3>
+                    <p>铁锈战争深海主题模组，包含海军、空军、装甲单位与原创地图，支持 PC 与 Android。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2025</span>
+                        <span class="timeline-tag">游戏</span>
+                        <span class="timeline-tag">Mod</span>
+                        <span class="timeline-tag">MIT</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/Pacific-Abyss" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                    <a href="https://github.com/CoralHymn/Pacific-Abyss/releases" class="btn btn-small btn-primary" target="_blank">
+                        <i class="fas fa-download"></i> 下载
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pixel-Master -->
+            <div class="software-item" data-category="tool">
+                <div class="software-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="software-info">
+                    <h3>Pixel-Master - Wplace 像素画工具</h3>
+                    <p>Wplace 像素画转换与在线绘画工具，支持多种抖动算法、图层、蒙版与 4K 性能优化，持续维护的最优分支。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">工具</span>
+                        <span class="timeline-tag">Web</span>
+                        <span class="timeline-tag">开源</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/Wplace-Master" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                </div>
+            </div>
+
+            <!-- WP-helrer -->
+            <div class="software-item" data-category="plugin">
+                <div class="software-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="software-info">
+                    <h3>WP-helrer - Wplace 截图扩展</h3>
+                    <p>在 wplace.live 地图上快速截图，支持实时画面与任意历史日期回溯。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">插件</span>
+                        <span class="timeline-tag">浏览器</span>
+                        <span class="timeline-tag">开源</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/Wplace-Screenshot-Tool" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                </div>
+            </div>
+
+            <!-- Wplace_AnalyticsPro -->
+            <div class="software-item" data-category="web">
+                <div class="software-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="software-info">
+                    <h3>Wplace_AnalyticsPro - WPlace 数据分析</h3>
+                    <p>联盟/玩家排行榜、搜索、热力图可视化与数据采集器，支持历史数据查询和本地文件上传。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">网站</span>
+                        <span class="timeline-tag">数据分析</span>
+                        <span class="timeline-tag">开源</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/Wplace_AnalyticsPro" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                </div>
+            </div>
+
+            <!-- wplace-discord-bot-open-source -->
+            <div class="software-item" data-category="tool">
+                <div class="software-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="software-info">
+                    <h3>wplace Discord Bot - 像素监控机器人</h3>
+                    <p>实时监控 Wplace 像素变化并通过 Discord 通知，支持历史截图、差异对比与 21 个命令。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">工具</span>
+                        <span class="timeline-tag">Discord</span>
+                        <span class="timeline-tag">开源</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/wplace-discord-bot-open-source" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                </div>
+            </div>
+
+            <!-- wplace-WebMonitor -->
+            <div class="software-item" data-category="web">
+                <div class="software-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="software-info">
+                    <h3>wplace-WebMonitor - 区域监控系统</h3>
+                    <p>wplace.live 区域像素监控，异步抓取瓦片、统计颜色占比并提供 ECharts 仪表板。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">网站</span>
+                        <span class="timeline-tag">监控</span>
+                        <span class="timeline-tag">开源</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/CoralHymn/wplace-WebMonitor" class="btn btn-small btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> 源码
+                    </a>
+                    <a href="https://qh.wplace.icu" class="btn btn-small btn-outline" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> 演示
+                    </a>
+                </div>
+            </div>
+
+            <!-- rocom-helper -->
+            <div class="software-item" data-category="tool">
+                <div class="software-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="software-info">
+                    <h3>rocom-helper - 洛克王国助手</h3>
+                    <p>基于 DD 内核驱动与 YOLO26 的自动化工具，支持自动点击、战斗辅助、AI 智能捉宠与灵动岛。</p>
+                    <div class="software-meta">
+                        <span class="software-date">2026</span>
+                        <span class="timeline-tag">工具</span>
+                        <span class="timeline-tag">YOLO</span>
+                        <span class="timeline-tag">暂未开源</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="./portfolio.html" class="btn btn-small btn-outline">
+                        <i class="fas fa-arrow-right"></i> 查看作品
+                    </a>
+                </div>
+            </div>
+
             <!-- RWMP2_Decryptor -->
             <div class="software-item" data-category="tool">
                 <div class="software-icon">
