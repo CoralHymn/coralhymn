@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wplace-WebMonitor — 区域监控系统 | Coralhymn</title>
+    <meta name="description" content="wplace.live 像素画布区域监控系统，实时捕获、颜色分析与可视化展示">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="nav-placeholder" data-active="portfolio"></div>
+    <main class="project-detail">
+        <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
+        <img src="../images/portfolio/wplace-webmonitor.jpg" alt="wplace-WebMonitor" class="project-hero">
+        <div class="project-header">
+            <div class="project-category">数据监控 · Python / Web</div>
+            <h1 class="project-title">wplace-WebMonitor</h1>
+            <div class="project-meta">
+                <div class="meta-item"><div class="meta-label">类型</div><div class="meta-value">区域监控系统</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">Python + aiohttp + Pillow + ECharts</div></div>
+                <div class="meta-item"><div class="meta-label">平台</div><div class="meta-value">Web</div></div>
+            </div>
+        </div>
+        <article class="project-content">
+            <h2>项目概述</h2>
+            <p>wplace-WebMonitor 是 wplace.live 像素画布区域监控系统。它定时捕获指定区域的像素颜色分布，记录多维度历史数据，并提供 CRT 风格的 Web 可视化界面。系统无需数据库，使用纯文件存储，适合持续运行在服务器上。</p>
+
+            <h2>核心功能</h2>
+            <ul>
+                <li>基于瓦片坐标的精准区域选择</li>
+                <li>异步并发下载瓦片，快速生成完整截图</li>
+                <li>实时、3 天、7 天与 180 天历史数据</li>
+                <li>ECharts 饼图与折线图趋势分析</li>
+                <li>自定义日期范围查询与图例显隐记忆</li>
+                <li>自动清理过期截图，节省存储空间</li>
+            </ul>
+
+            <h2>项目地址</h2>
+            <div class="project-links">
+                <a href="https://github.com/CoralHymn/wplace-WebMonitor" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> 源代码
+                </a>
+                <a href="https://qh.wplace.icu" class="btn btn-primary" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i> 在线演示
+                </a>
+            </div>
+        </article>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/nav.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

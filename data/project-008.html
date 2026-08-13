@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel-Master — 像素画转换与绘画 | Coralhymn</title>
+    <meta name="description" content="Wplace 像素画转换与在线绘画工具，支持多种抖动算法、图层与 4K 优化">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div id="nav-placeholder" data-active="portfolio"></div>
+    <main class="project-detail">
+        <a href="../portfolio.html" class="back-link"><i class="fas fa-arrow-left"></i> 返回作品集</a>
+        <img src="../images/portfolio/pixel-master.jpg" alt="Pixel-Master" class="project-hero">
+        <div class="project-header">
+            <div class="project-category">像素设计 · Web</div>
+            <h1 class="project-title">Pixel-Master</h1>
+            <div class="project-meta">
+                <div class="meta-item"><div class="meta-label">类型</div><div class="meta-value">像素创作工具</div></div>
+                <div class="meta-item"><div class="meta-label">技术栈</div><div class="meta-value">HTML / CSS / JS + Web Worker</div></div>
+                <div class="meta-item"><div class="meta-label">平台</div><div class="meta-value">Web / 移动端</div></div>
+            </div>
+        </div>
+        <article class="project-content">
+            <h2>项目概述</h2>
+            <p>Pixel-Master（Wplace-Master）是 Wplace 像素画创作与图像转换工具，基于原作者三文鱼的开源网页进行二次开发。这个分支补上了移动端适配、像素绘画工具和更多图像调整能力，是目前持续维护的最优分支。</p>
+
+            <h2>核心功能</h2>
+            <ul>
+                <li>Wplace 调色板颜色转换，支持免费/付费调色板组合</li>
+                <li>Floyd-Steinberg、Stucki、Burkes、Atkinson 等抖动算法</li>
+                <li>在线像素绘画：铅笔、填充、取色、直线、矩形、圆形</li>
+                <li>图层、蒙版、撤销重做、自动描边与网格显示</li>
+                <li>4K 画布性能优化：Uint32Array、脏矩形渲染、Web Worker 加速</li>
+                <li>移动端触摸手势、双指缩放与单指绘画</li>
+            </ul>
+
+            <h2>项目地址</h2>
+            <div class="project-links">
+                <a href="https://github.com/CoralHymn/Wplace-Master" class="btn btn-secondary" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> 源代码
+                </a>
+            </div>
+        </article>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/nav.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -29,8 +29,8 @@
     <main class="page-container">
         <h1 class="page-title">作品集</h1>
         <p class="page-subtitle">
-            这里展示我的游戏开发作品、艺术设计和创意项目。
-            点击带有链接图标的作品可查看详细介绍。
+            这里展示我的游戏 Mod、开发工具、数据分析与创意项目。
+            点击作品卡片可查看详细介绍。
         </p>
 
         <!-- 筛选按钮 -->
@@ -39,95 +39,144 @@
             <button class="filter-btn" data-filter="game">游戏</button>
             <button class="filter-btn" data-filter="art">艺术</button>
             <button class="filter-btn" data-filter="design">设计</button>
+            <button class="filter-btn" data-filter="tool">工具</button>
             <button class="filter-btn" data-filter="other">其他</button>
         </div>
-        
+
         <!-- 作品集网格 -->
         <div class="portfolio-grid">
-            
-            <!-- 占位模板：游戏项目 1 (project-001) -->
-            <!--
-            <div class="portfolio-item clickable" data-category="game" onclick="location.href='./data/project-001.html'">
-                <img src="https://via.placeholder.com/600x338/1a1a2e/ffffff?text=Game+Project+1" alt="游戏项目 1" class="portfolio-image">
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-005.html'">
+                <img src="./images/portfolio/clash-gate.jpg" alt="Clash-Gate" class="portfolio-image" loading="lazy">
                 <div class="portfolio-link-icon">
                     <i class="fas fa-arrow-right"></i>
                 </div>
                 <div class="portfolio-overlay">
-                    <div class="portfolio-category">游戏开发</div>
-                    <h3 class="portfolio-title">示例游戏项目 1</h3>
-                    <p class="portfolio-description">这是一个使用 Godot Engine 开发的独立游戏作品，探索了独特的游戏机制和视觉风格。</p>
+                    <div class="portfolio-category">工具 · Python</div>
+                    <h3 class="portfolio-title">Clash-Gate — 节点端口分配器</h3>
+                    <p class="portfolio-description">为 Clash Verge 的不同订阅节点分配独立本地端口，支持多订阅隔离、端口测速与访问日志。</p>
                 </div>
             </div>
-            -->
 
-            <div class="portfolio-item clickable" data-category="other" onclick="location.href='./data/project-002.html'">
-                <img src="https://img.h440.top/PicGo/20260720000600166.png" alt="rocom-helper" class="portfolio-image">
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-006.html'">
+                <img src="./images/portfolio/cosbox.jpg" alt="CosBox" class="portfolio-image" loading="lazy">
                 <div class="portfolio-link-icon">
                     <i class="fas fa-arrow-right"></i>
                 </div>
                 <div class="portfolio-overlay">
-                    <div class="portfolio-category">游戏工具 · Python</div>
+                    <div class="portfolio-category">AI 工具 · TypeScript</div>
+                    <h3 class="portfolio-title">CosBox — 状态驱动叙事客户端</h3>
+                    <p class="portfolio-description">面向 AI 角色扮演的结构化状态客户端，角色状态、衣柜、地点与日程均以版本快照管理。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="game" onclick="location.href='./data/project-007.html'">
+                <img src="./images/portfolio/pacific-abyss.jpg" alt="Pacific-Abyss" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">游戏 Mod · 铁锈战争</div>
+                    <h3 class="portfolio-title">Pacific-Abyss — 深海大洋模组</h3>
+                    <p class="portfolio-description">铁锈战争深海主题模组，包含海军、空军、装甲单位与原创地图，支持 PC 与 Android。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="design" onclick="location.href='./data/project-008.html'">
+                <img src="./images/portfolio/pixel-master.jpg" alt="Pixel-Master" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">像素设计 · Web</div>
+                    <h3 class="portfolio-title">Pixel-Master — 像素画转换与绘画</h3>
+                    <p class="portfolio-description">Wplace 像素画转换与在线绘画工具，支持多种抖动算法、图层、蒙版与 4K 性能优化。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-009.html'">
+                <img src="./images/portfolio/rwmp2.jpg" alt="RWMP2_Decryptor" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">工具 · Python / Web</div>
+                    <h3 class="portfolio-title">RWMP2_Decryptor — 模组解密器</h3>
+                    <p class="portfolio-description">铁锈战争 RWMP2 加密模组解锁工具，支持 GUI、WebUI 与纯 HTML 在线使用。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-010.html'">
+                <img src="./images/portfolio/wp-helrer.jpg" alt="WP-helrer" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">浏览器扩展 · JS</div>
+                    <h3 class="portfolio-title">WP-helrer — Wplace 截图扩展</h3>
+                    <p class="portfolio-description">在 wplace.live 地图上快速截图，支持实时画面与任意历史日期回溯。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-011.html'">
+                <img src="./images/portfolio/wplace-analytics.jpg" alt="Wplace_AnalyticsPro" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">数据分析 · Web</div>
+                    <h3 class="portfolio-title">Wplace_AnalyticsPro — 数据分析工具</h3>
+                    <p class="portfolio-description">WPlace 联盟/玩家排行榜、搜索、热力图可视化与数据采集器。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-012.html'">
+                <img src="./images/portfolio/wplace-discord.jpg" alt="wplace-discord-bot" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">监控机器人 · Python</div>
+                    <h3 class="portfolio-title">wplace Discord Bot — 像素监控机器人</h3>
+                    <p class="portfolio-description">实时监控 Wplace 像素变化并通过 Discord 通知，支持历史截图与 21 个管理命令。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-013.html'">
+                <img src="./images/portfolio/wplace-webmonitor.jpg" alt="wplace-WebMonitor" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">数据监控 · Python / Web</div>
+                    <h3 class="portfolio-title">wplace-WebMonitor — 区域监控系统</h3>
+                    <p class="portfolio-description">wplace.live 区域像素监控，异步抓取瓦片、统计颜色占比并提供 ECharts 仪表板。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-014.html'">
+                <img src="./images/portfolio/zipcloak.jpg" alt="ZipCloak" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">工具 · Python</div>
+                    <h3 class="portfolio-title">ZipCloak — ZIP 文件混淆工具</h3>
+                    <p class="portfolio-description">对 ZIP 中的指定类型文件进行混淆，使其被系统识别为文件夹，支持多语言与恢复模式。</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item clickable" data-category="tool" onclick="location.href='./data/project-002.html'">
+                <img src="https://img.h440.top/PicGo/20260720000600166.png" alt="rocom-helper" class="portfolio-image" loading="lazy">
+                <div class="portfolio-link-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-category">游戏工具 · Python + YOLO</div>
                     <h3 class="portfolio-title">rocom-helper — 洛克王国助手</h3>
-                    <p class="portfolio-description">基于 Python 与内核级虚拟驱动的洛克王国自动化游戏工具，支持自动点击、战斗辅助、一键更新。</p>
+                    <p class="portfolio-description">基于 DD 内核虚拟驱动的自动化工具，支持自动点击、战斗辅助与 YOLO26 AI 视觉捉宠。</p>
                 </div>
             </div>
-
-            <!-- 占位模板：设计项目 -->
-            <!--
-            <div class="portfolio-item" data-category="design">
-                <img src="https://via.placeholder.com/600x338/3cffd0/000000?text=Design+Project+1" alt="设计项目 1" class="portfolio-image">
-                <div class="portfolio-overlay">
-                    <div class="portfolio-category">UI/UX 设计</div>
-                    <h3 class="portfolio-title">示例设计项目 1</h3>
-                    <p class="portfolio-description">界面设计与用户体验优化项目，专注于简洁高效的交互流程。</p>
-                </div>
-            </div>
-            -->
-
-            <!-- 占位模板：游戏项目 2 (project-003) -->
-            <!--
-            <div class="portfolio-item clickable" data-category="game" onclick="location.href='./data/project-003.html'">
-                <img src="https://via.placeholder.com/600x338/5200ff/ffffff?text=Game+Project+2" alt="游戏项目 2" class="portfolio-image">
-                <div class="portfolio-link-icon">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="portfolio-overlay">
-                    <div class="portfolio-category">游戏开发</div>
-                    <h3 class="portfolio-title">示例游戏项目 2</h3>
-                    <p class="portfolio-description">参加 Game Jam 活动开发的限时作品，主题为"连接"的解谜游戏。</p>
-                </div>
-            </div>
-            -->
-
-            <!-- 占位模板：实验项目 -->
-            <!--
-            <div class="portfolio-item" data-category="other">
-                <img src="https://via.placeholder.com/600x338/ffd700/000000?text=Other+Project+1" alt="其他项目 1" class="portfolio-image">
-                <div class="portfolio-overlay">
-                    <div class="portfolio-category">实验项目</div>
-                    <h3 class="portfolio-title">示例实验项目 1</h3>
-                    <p class="portfolio-description">技术探索和原型开发，尝试新的编程范式和视觉效果。</p>
-                </div>
-            </div>
-            -->
-
-            <!-- 占位模板：艺术项目 2 (project-004) -->
-            <!--
-            <div class="portfolio-item clickable" data-category="art" onclick="location.href='./data/project-004.html'">
-                <img src="https://via.placeholder.com/600x338/ff6b6b/ffffff?text=Art+Project+2" alt="艺术项目 2" class="portfolio-image">
-                <div class="portfolio-link-icon">
-                    <i class="fas fa-arrow-right"></i>
-                </div>
-                <div class="portfolio-overlay">
-                    <div class="portfolio-category">数字艺术</div>
-                    <h3 class="portfolio-title">示例艺术项目 2</h3>
-                    <p class="portfolio-description">生成艺术与算法美学探索，使用代码创作的视觉作品系列。</p>
-                </div>
-            </div>
-            -->
-
         </div>
-        
 
     </main>
 
