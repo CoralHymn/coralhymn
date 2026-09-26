@@ -136,8 +136,8 @@
 - **建议**：如果本地测试需要，可以创建一个占位页面
 
 ### 2. 外部图片依赖
-- SVG Logo: `https://img.h440.top/PicGo/coralhymn2-587.svg`
-- 备案图标: `https://img.h440.top/PicGo/20250825114220920.png`
+- SVG Logo: `https://img.cc00.top/PicGo/coralhymn2-587.svg`
+- 备案图标: `https://img.cc00.top/PicGo/20250825114220920.png`
 - **风险**：CDN 失效会导致图片丢失
 - **建议**：下载图片到本地 `images/` 目录
 

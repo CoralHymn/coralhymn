@@ -2,8 +2,8 @@
 
 <p align="center"> 
   <a href="https://coralhymn.com">
-    <img src="https://img.h440.top/PicGo/coralhymn2-587.svg">
-    <img src="https://img.h440.top/PicGo/coralhymn-515.svg">
+    <img src="https://img.cc00.top/PicGo/coralhymn2-587.svg">
+    <img src="https://img.cc00.top/PicGo/coralhymn-515.svg">
   </a>
 </p>
 

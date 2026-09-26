@@ -81,7 +81,7 @@ coralhymn2602/
    - 引用路径：`../images/portfolio/文件名.jpg`
 
 3. **使用图床**：
-   - 上传到你的图床（如 img.h440.top）
+   - 上传到你的图床（如 img.cc00.top）
    - 引用完整 URL
 
 ---
